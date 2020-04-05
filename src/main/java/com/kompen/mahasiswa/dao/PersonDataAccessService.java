@@ -20,32 +20,28 @@ public class PersonDataAccessService implements PersonDao {
     }
 
     @Override
-    public int insertPerson(UUID id, Person person) {
-        // TODO Auto-generated method stub
-        return 0;
-    }
-
-    @Override
     public List<Person> selectAllPeople() {
         String sql = "SELECT id, name FROM person";
         return jdbcTemplate.query(sql, mapPersonFromDB());
     }
+    
+    @Override
+    public int insertPerson(UUID id, Person person) {
+        return 0;
+    }
 
     @Override
     public Optional<Person> selectPersonById(UUID id) {
-        // TODO Auto-generated method stub
         return null;
     }
 
     @Override
     public int deletePersonById(UUID id) {
-        // TODO Auto-generated method stub
         return 0;
     }
 
     @Override
     public int updatePersonById(UUID id, Person person) {
-        // TODO Auto-generated method stub
         return 0;
     }
 
