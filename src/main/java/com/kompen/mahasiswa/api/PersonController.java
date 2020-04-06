@@ -2,9 +2,7 @@ package com.kompen.mahasiswa.api;
 
 import java.util.List;
 import java.util.UUID;
-
 import javax.validation.Valid;
-
 import com.kompen.mahasiswa.model.Person;
 import com.kompen.mahasiswa.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
