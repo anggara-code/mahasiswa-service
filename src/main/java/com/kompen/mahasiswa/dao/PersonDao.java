@@ -9,6 +9,10 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface PersonDao {
 
+    List<Person> selectAllPeople();
+
+    Optional<Person> selectPersonById(UUID id);
+
     int insertPerson(UUID id, Person person);
 
     default int insertPerson(Person person) {
@@ -16,12 +20,8 @@ public interface PersonDao {
         return insertPerson(id, person);
     }
 
-    List<Person> selectAllPeople();
-
-    Optional<Person> selectPersonById(UUID id);
-
-    int deletePersonById(UUID id);
-
     int updatePersonById(UUID id, Person person);
+    
+    int deletePersonById(UUID id);
 
 }
