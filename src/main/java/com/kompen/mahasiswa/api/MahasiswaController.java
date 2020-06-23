@@ -44,7 +44,7 @@ public class MahasiswaController {
 
     @PutMapping(path = "/{nim}")
     public void updateMahasiswa(@PathVariable("nim") int nim, @Valid @NonNull @RequestBody Mahasiswa mahasiswaToUpdate) {
-        mahasiswaService.updateMahasiswaByNim(nim, mahasiswaToUpdate);
+        mahasiswaService.updateMahasiswa(nim, mahasiswaToUpdate);
     }
 
     @DeleteMapping(path = "/{nim}")
