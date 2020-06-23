@@ -10,17 +10,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 @Repository("postgres")
-public class PersonDataAccessService implements MahasiswaDao {
+public class MahasiswaDataAccessService implements MahasiswaDao {
 
     private final JdbcTemplate jdbcTemplate;
 
     @Autowired
-    public PersonDataAccessService(JdbcTemplate jdbcTemplate) {
+    public MahasiswaDataAccessService(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
 
     @Override
-    public List<Mahasiswa> selectAllPeople() {
+    public List<Mahasiswa> selectAllMahasiswa() {
         final String sql = "SELECT * FROM mahasiswa";
         return jdbcTemplate.query(sql, mapPersonFromDB());
     }

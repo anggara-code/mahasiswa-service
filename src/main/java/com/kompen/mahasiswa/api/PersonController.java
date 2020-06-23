@@ -28,8 +28,8 @@ public class PersonController {
     }
     
     @GetMapping
-    public List<Mahasiswa> getAllPeople() {
-        return mahasiswaService.getAllPeople();
+    public List<Mahasiswa> getAllMahasiswa() {
+        return mahasiswaService.getAllMahasiswa();
     }
 
     // @GetMapping(path = "/{id}")

@@ -8,9 +8,9 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface MahasiswaDao {
 
-    List<Mahasiswa> selectAllPeople();
+    List<Mahasiswa> selectAllMahasiswa();
 
-    // Optional<Person> selectPersonById(UUID id);
+    // Optional<Mahasiswa> selectMahasiswaByNim(int nim);
 
     // int insertPerson(UUID id, Person person);
 

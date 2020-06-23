@@ -19,8 +19,8 @@ public class MahasiswaService {
         this.mahasiswaDao = mahasiswaDao;
     }
     
-    public List<Mahasiswa> getAllPeople() {
-        return mahasiswaDao.selectAllPeople();
+    public List<Mahasiswa> getAllMahasiswa() {
+        return mahasiswaDao.selectAllMahasiswa();
     }
     
     // public Optional<Person> getPersonById(UUID id) {
