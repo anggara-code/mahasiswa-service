@@ -26,16 +26,16 @@ public class MahasiswaService {
         return mahasiswaDao.selectMahasiswaByNim(nim);
     }
     
-    // public int addPerson(Person person) {
-    //     return personDao.insertPerson(person);
-    // }
+    public int addMahasiswa(Mahasiswa mahasiswa) {
+        return mahasiswaDao.insertMahasiswa(mahasiswa);
+    }
 
-    // public int updatePerson(UUID id, Person newPerson) {
-    //     return personDao.updatePersonById(id, newPerson);
-    // }
+    public int updateMahasiswa(int nim, Mahasiswa mahasiswa) {
+        return mahasiswaDao.updateMahasiswaByNim(nim, mahasiswa);
+    }
 
-    // public int deletePerson(UUID id) {
-    //     return personDao.deletePersonById(id);
-    // }
+    public int deleteMahasiswaByNim(int nim) {
+        return mahasiswaDao.deleteMahasiswaByNim(nim);
+    }
 
 }

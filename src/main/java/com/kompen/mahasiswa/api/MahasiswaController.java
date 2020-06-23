@@ -37,19 +37,19 @@ public class MahasiswaController {
                 .orElse(null);
     }
     
-    // @PostMapping
-    // public void addPerson(@Valid @NonNull @RequestBody Person person) {
-    //     personService.addPerson(person);
-    // }
+    @PostMapping
+    public void addMahasiswa(@Valid @NonNull @RequestBody Mahasiswa mahasiswa) {
+        mahasiswaService.addMahasiswa(mahasiswa);
+    }
 
-    // @PutMapping(path = "/{id}")
-    // public void updatePerson(@PathVariable("id") UUID id, @Valid @NonNull @RequestBody Person personToUpdate) {
-    //     personService.updatePerson(id, personToUpdate);
-    // }
+    @PutMapping(path = "/{nim}")
+    public void updateMahasiswa(@PathVariable("nim") int nim, @Valid @NonNull @RequestBody Mahasiswa mahasiswaToUpdate) {
+        mahasiswaService.updateMahasiswaByNim(nim, mahasiswaToUpdate);
+    }
 
-    // @DeleteMapping(path = "/{id}")
-    // public void deletePersonById(@PathVariable("id") UUID id) {
-    //     personService.deletePerson(id);
-    // }
+    @DeleteMapping(path = "/{nim}")
+    public void deleteMahasiswaByNim(@PathVariable("nim") int nim) {
+        mahasiswaService.deleteMahasiswaByNim(nim);
+    }
 
 }   

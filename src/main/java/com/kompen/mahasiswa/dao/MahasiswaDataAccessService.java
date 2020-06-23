@@ -31,24 +31,25 @@ public class MahasiswaDataAccessService implements MahasiswaDao {
         return Optional.ofNullable(mahasiswa);
     }
     
-    // @Override
-    // public int insertPerson(UUID id, Person person) {
-    //     final String sql = "INSERT INTO mahasiswa (id, name) VALUES (?, ?)";
-    //     return jdbcTemplate.update(sql, id, person.getName());
-    // }
-    // INSERT INTO mahasiswa (nim, nama_lengkap, prodi, tahun_masuk, username, password, foto_profil, nomor_telepon, email) VALUES (1641720008, 'Anggara Mahendra P', 'TI', '2016', 'anggara', 'polinema16', '1.jpg', '085850840454', 'anggaramahendra00@gmail.com');
+    @Override
+    public int insertMahasiswa(Mahasiswa mahasiswa) {
+        final String sql = "INSERT INTO mahasiswa (nim, nama_lengkap, prodi, tahun_masuk, username, password, foto_profil, nomor_telepon, email) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        return jdbcTemplate.update(sql, mahasiswa.getNim(), mahasiswa.getNamaLengkap(), mahasiswa.getProdi(), mahasiswa.getTahunMasuk(), mahasiswa.getUsername(), 
+            mahasiswa.getPassword(), mahasiswa.getFotoProfil(), mahasiswa.getNomorTelepon(), mahasiswa.getEmail());
+    }
 
-    // @Override
-    // public int updatePersonById(UUID id, Person person) {
-    //     final String sql = "UPDATE person SET name = ? WHERE id = ?";
-    //     return jdbcTemplate.update(sql, person.getName(), id);
-    // }
+    @Override
+    public int updateMahasiswaByNim(int nim, Mahasiswa mahasiswa) {
+        final String sql = "UPDATE mahasiswa SET nim = ?, nama_lengkap = ?, prodi = ?, tahun_masuk = ?, username = ?, password = ?, foto_profil = ?, nomor_telepon = ?, email = ? WHERE nim = ?";
+        return jdbcTemplate.update(sql, mahasiswa.getNim(), mahasiswa.getNamaLengkap(), mahasiswa.getProdi(), mahasiswa.getTahunMasuk(), mahasiswa.getUsername(),
+            mahasiswa.getPassword(), mahasiswa.getFotoProfil(), mahasiswa.getNomorTelepon(), mahasiswa.getEmail(), nim);
+    }
 
-    // @Override
-    // public int deletePersonById(UUID id) {
-    //     final String sql = "DELETE FROM person WHERE id = ?";
-    //     return jdbcTemplate.update(sql, id);
-    // }
+    @Override
+    public int deleteMahasiswaByNim(int nim) {
+        final String sql = "DELETE FROM mahasiswa WHERE nim = ?";
+        return jdbcTemplate.update(sql, nim);
+    }
 
     private RowMapper<Mahasiswa> mapPersonFromDB() {
         return (resultSet, i) -> {

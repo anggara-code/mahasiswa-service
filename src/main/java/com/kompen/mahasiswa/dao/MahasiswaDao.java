@@ -12,15 +12,10 @@ public interface MahasiswaDao {
 
     Optional<Mahasiswa> selectMahasiswaByNim(int nim);
 
-    // int insertPerson(UUID id, Person person);
+    int insertMahasiswa(Mahasiswa mahasiswa);
 
-    // default int insertPerson(Person person) {
-    //     UUID id = UUID.randomUUID();
-    //     return insertPerson(id, person);
-    // }
+    int updateMahasiswaByNim(int nim, Mahasiswa mahasiswa);
 
-    // int updatePersonById(UUID id, Person person);
-
-    // int deletePersonById(UUID id);
+    int deleteMahasiswaByNim(int nim);
 
 }
