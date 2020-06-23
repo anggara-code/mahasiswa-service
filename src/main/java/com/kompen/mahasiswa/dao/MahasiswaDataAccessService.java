@@ -2,7 +2,6 @@ package com.kompen.mahasiswa.dao;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.UUID;
 import org.springframework.jdbc.core.RowMapper;
 import com.kompen.mahasiswa.model.Mahasiswa;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -25,12 +24,12 @@ public class MahasiswaDataAccessService implements MahasiswaDao {
         return jdbcTemplate.query(sql, mapPersonFromDB());
     }
     
-    // @Override
-    // public Optional<Person> selectPersonById(UUID id) {
-    //     final String sql = "SELECT id, name FROM mahasiswa WHERE id = ?";
-    //     Person person = jdbcTemplate.queryForObject(sql, new Object[]{id}, mapPersonFromDB());
-    //     return Optional.ofNullable(person);
-    // }
+    @Override
+    public Optional<Mahasiswa> selectMahasiswaByNim(int nim) {
+        final String sql = "SELECT * FROM mahasiswa WHERE nim = ?";
+        Mahasiswa mahasiswa = jdbcTemplate.queryForObject(sql, new Object[]{nim}, mapPersonFromDB());
+        return Optional.ofNullable(mahasiswa);
+    }
     
     // @Override
     // public int insertPerson(UUID id, Person person) {

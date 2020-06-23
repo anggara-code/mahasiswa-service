@@ -10,7 +10,7 @@ public interface MahasiswaDao {
 
     List<Mahasiswa> selectAllMahasiswa();
 
-    // Optional<Mahasiswa> selectMahasiswaByNim(int nim);
+    Optional<Mahasiswa> selectMahasiswaByNim(int nim);
 
     // int insertPerson(UUID id, Person person);
 

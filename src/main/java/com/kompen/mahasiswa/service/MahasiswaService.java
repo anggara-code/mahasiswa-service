@@ -2,7 +2,6 @@ package com.kompen.mahasiswa.service;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.UUID;
 import com.kompen.mahasiswa.dao.MahasiswaDao;
 import com.kompen.mahasiswa.model.Mahasiswa;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,9 +22,9 @@ public class MahasiswaService {
         return mahasiswaDao.selectAllMahasiswa();
     }
     
-    // public Optional<Person> getPersonById(UUID id) {
-    //     return personDao.selectPersonById(id);
-    // }
+    public Optional<Mahasiswa> getMahasiswaByNim(int nim) {
+        return mahasiswaDao.selectMahasiswaByNim(nim);
+    }
     
     // public int addPerson(Person person) {
     //     return personDao.insertPerson(person);

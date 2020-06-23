@@ -1,7 +1,6 @@
 package com.kompen.mahasiswa.api;
 
 import java.util.List;
-import java.util.UUID;
 import javax.validation.Valid;
 import com.kompen.mahasiswa.model.Mahasiswa;
 import com.kompen.mahasiswa.service.MahasiswaService;
@@ -18,12 +17,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RequestMapping("api/mahasiswa")
 @RestController
-public class PersonController {
+public class MahasiswaController {
 
     private final MahasiswaService mahasiswaService;
 
     @Autowired
-    public PersonController(MahasiswaService mahasiswaService) {
+    public MahasiswaController(MahasiswaService mahasiswaService) {
         this.mahasiswaService = mahasiswaService;
     }
     
@@ -32,11 +31,11 @@ public class PersonController {
         return mahasiswaService.getAllMahasiswa();
     }
 
-    // @GetMapping(path = "/{id}")
-    // public Person getPersonById(@PathVariable("id") UUID id) {
-    //     return personService.getPersonById(id)
-    //             .orElse(null);
-    // }
+    @GetMapping(path = "/{nim}")
+    public Mahasiswa getMahasiswaByNim(@PathVariable("nim") int nim) {
+        return mahasiswaService.getMahasiswaByNim(nim)
+                .orElse(null);
+    }
     
     // @PostMapping
     // public void addPerson(@Valid @NonNull @RequestBody Person person) {
