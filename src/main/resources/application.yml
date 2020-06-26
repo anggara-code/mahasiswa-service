@@ -3,4 +3,15 @@ app:
         jdbc-url: jdbc:postgresql://localhost:5432/mahasiswaservice_db
         username: postgres
         password: password
-        pool-size: 30
+        # port: 5432
+        # host: localhost
+        # databaseName: mahasiswaservice_db
+        # port: ${POSTGRES_PORT}
+        # username: ${POSTGRES_USER}
+        # password: ${POSTGRES_PASSWORD}
+        # host: ${POSTGRES_HOST}
+        # databaseName: ${POSTGRES_DATABASE_NAME}
+        # jdbc-url: jdbc:postgresql://${app.datasource.host}:${app.datasource.port}/${app.datasource.databaseName}
+
+server:
+    port: 8081
