@@ -1,6 +1,6 @@
-app:
+spring:
     datasource:
-        jdbc-url: jdbc:postgresql://localhost:5432/mahasiswaservice_db
+        jdbc-url: jdbc:postgresql://dbpostgres:5432/mahasiswaservice_db
         username: postgres
         password: password
         # port: 5432
