@@ -1,17 +1,18 @@
 spring:
-    datasource:
-        jdbc-url: jdbc:postgresql://dbpostgres:5432/mahasiswaservice_db
-        username: postgres
-        password: password
-        # port: 5432
-        # host: localhost
-        # databaseName: mahasiswaservice_db
-        # port: ${POSTGRES_PORT}
-        # username: ${POSTGRES_USER}
-        # password: ${POSTGRES_PASSWORD}
-        # host: ${POSTGRES_HOST}
-        # databaseName: ${POSTGRES_DATABASE_NAME}
-        # jdbc-url: jdbc:postgresql://${app.datasource.host}:${app.datasource.port}/${app.datasource.databaseName}
+  datasource:
+    hikari:
+      jdbc-url: jdbc:postgresql://dbpostgres:5432/mahasiswaservice_db
+      username: postgres
+      password: password
+  application:
+    name: mahasiswa-service
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka-server:8761/eureka/
+  instance:
+    prefer-ip-address: true
 
 server:
-    port: 8081
+  port: 8081
